@@ -16,7 +16,6 @@ def main():
             #Sorteia partidas
             pass
         elif choice == '3':
-            #Visualizar Partidas
             pass
         elif choice == '4':
             #Jogar a Próxima Partida
