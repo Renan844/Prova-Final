@@ -47,4 +47,10 @@ class Equipe:
         pass
 
     def apagar(self):
+        def apagar(self):
+            bd = BancoDeDados()
+            bd.conectar()
+            consulta = "DELETE FROM equipes WHERE id = %s"
+            bd.executar_consulta(consulta, (self.id,))
+            bd.fechar_conexao()
         pass

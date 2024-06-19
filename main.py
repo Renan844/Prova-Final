@@ -16,6 +16,7 @@ def main():
             #Sorteia partidas
             pass
         elif choice == '3':
+            #Visualizar Partidas
             pass
         elif choice == '4':
             #Jogar a Próxima Partida
@@ -49,7 +50,17 @@ def gerencia_equipes():
             equipes = Equipe.obter_todos()
             print(f'Equipe {nome} cadastrada com sucesso')
         elif choice == '3':
-            pass
+            id_equipe = int(input("ID da Equipe a ser atualizada: "))
+            equipe = next((e for e in Equipe.obter_todos() if e.id == id_equipe), None)
+            if equipe:
+                equipe.nome = input(f"Novo nome (atual: {equipe.nome}): ")
+                equipe.localizacao = input(f"Nova localização (atual: {equipe.localizacao}): ")
+                equipe.potencial = float(input(f"Novo potencial (atual: {equipe.potencial}): "))
+                equipe.atualizar()
+                print("Equipe atualizada com sucesso.")
+            else:
+                print("Equipe não encontrada.")
+
         elif choice == '4':
             pass
         elif choice == '5':
