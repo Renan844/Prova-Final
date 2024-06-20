@@ -62,7 +62,13 @@ def gerencia_equipes():
                 print("Equipe não encontrada.")
 
         elif choice == '4':
-            pass
+            id_equipe = int(input("ID da Equipe a ser apagada: "))
+            equipe = next((e for e in Equipe.obter_todos() if e.id == id_equipe), None)
+            if equipe:
+                equipe.apagar()
+                print("Equipe apagada com sucesso.")
+            else:
+                print("Equipe não encontrada.")
         elif choice == '5':
             break
         else:
