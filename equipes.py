@@ -44,7 +44,7 @@ class Equipe:
         parametros = (self.nome, self.localizacao, self.potencial, self.id)
         bd.executar_consulta(consulta, parametros)
         bd.fechar_conexao()
-        pass
+
 
     def apagar(self):
         def apagar(self):
@@ -53,4 +53,4 @@ class Equipe:
             consulta = "DELETE FROM equipes WHERE id = %s"
             bd.executar_consulta(consulta, (self.id,))
             bd.fechar_conexao()
-        pass
+
